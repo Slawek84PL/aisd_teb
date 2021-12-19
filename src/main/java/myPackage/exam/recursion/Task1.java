@@ -18,6 +18,36 @@ public class Task1 {
         //3
 
         //todo tutaj wykonaj zadanie
+        xMassTree(numberOfPyramidLevels);
+        System.out.println();
+        System.out.println("Odwrotnie, przy użyciu rekurekurencji");
+        xMassTreeRecursion(numberOfPyramidLevels);
+
+    }
+
+    private static void xMassTreeRecursion(int numberOfPyramidLevels){
+        if (numberOfPyramidLevels <= 1) {
+            System.out.println("3");
+        }
+        else {
+            for (int i = 0; i < numberOfPyramidLevels; i++) {
+                System.out.print("3");
+            }
+            System.out.println();
+            xMassTreeRecursion(numberOfPyramidLevels-1);
+        }
+    }
+
+    private static void xMassTree(int numberOfPyramidLevels){
+        String[] lista = new String[numberOfPyramidLevels];
+        for (int i = 0; i < lista.length; i++) {
+            if (i == 0) lista[i] = "3";
+            else lista[i] = lista[i - 1] + "3";
+        }
+
+        for (String s : lista) {
+            System.out.println(s);
+        }
     }
 
 }
