@@ -1,8 +1,9 @@
 package myPackage.exam.recursion;
 
 public class Task1 {
+    private static String elementOfPyramid;
 
-    public static void printNumberPyramid(int numberOfPyramidLevels){
+    public static void printReversNumberPyramid(int numberOfPyramidLevels){
         //Wypisz na konsolę, piramidę, wypisywać będziemy cyfrę 3 w formie string lub int, tj w pierwszej lini jedna cyfra 3, w drugiej lini dwie trójki, w trzeciej lini 3 cyfry itd
         //przykład wypisań na konsoli
         //3
@@ -18,6 +19,39 @@ public class Task1 {
         //3
 
         //todo tutaj wykonaj zadanie
+        if(elementOfPyramid == null) elementOfPyramid = String.valueOf(numberOfPyramidLevels);
+
+        if (numberOfPyramidLevels <= 1) {
+            buildPyramidLevel(numberOfPyramidLevels);
+        }else {
+            buildPyramidLevel(numberOfPyramidLevels);
+            printReversNumberPyramid(numberOfPyramidLevels -1);
+        }
+        elementOfPyramid = null;
     }
 
+    public static void printNumberPyramid(int numberOfPyramidLevels){
+        if(elementOfPyramid == null) {
+            elementOfPyramid = String.valueOf(numberOfPyramidLevels);
+            numberOfPyramidLevels = 1;
+        }
+
+        if(numberOfPyramidLevels >= Integer.parseInt(elementOfPyramid)){
+            buildPyramidLevel(numberOfPyramidLevels);
+        }else {
+            buildPyramidLevel(numberOfPyramidLevels);
+            printNumberPyramid(numberOfPyramidLevels + 1);
+        }
+        elementOfPyramid = null;
+    }
+
+    private static void buildPyramidLevel(int numberOfPyramidLevels){
+        if (numberOfPyramidLevels <= 1) {
+            System.out.println(elementOfPyramid);
+        }else {
+            System.out.print(elementOfPyramid);
+            buildPyramidLevel(numberOfPyramidLevels -1);
+        }
+    }
 }
+
