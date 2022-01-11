@@ -28,12 +28,10 @@ public class Task2 {
     }
 
     public static void printSortedCars() {
-        //Wypisz na konsolę listę aut (listę należy zrobić samodzielnie, przygotowanie DOBRYCH danych testowych jest cześcią zadania)
-        //lista ma być posotrowana po atrybutach w następującej kolejności:
-        //- auta ekskluzywne mają znajdować się na początku listy
-        //- auta najnowsze, o najwyższym roku produkcji, mają być wyświetlane przed autami starszymi
-        //- auta o wyższym poziomie wyposażenia mają być przed autami o niższym poziomie wyposażenia
-        //- auta droższe mają być wyświetlane przed tańszymi
+        Collections.sort(carList);
+        for(Car car : carList){
+            System.out.println(car);
+        }
     }
 
     public static void printCarsToValueAndLevelOfEquipment(double maxValue, int levelOfEquipment){
