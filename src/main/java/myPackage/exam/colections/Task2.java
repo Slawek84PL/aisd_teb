@@ -53,7 +53,8 @@ public class Task2 {
     }
 
     public static void removeCarFromList() {
-        //todo
+        carList.remove(auto4);
+        carList.remove(auto9);
     }
 
     public static void printCarListAfterSomeModification(){
