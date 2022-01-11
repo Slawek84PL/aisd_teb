@@ -1,9 +1,6 @@
 package myPackage.exam.colections;
 
-import javax.management.ObjectInstance;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Task2 {
     static Car auto1 = new Car(true, 2021, 2, 180000);
@@ -40,10 +37,16 @@ public class Task2 {
     }
 
     public static void printCarsToValueAndLevelOfEquipment(double maxValue, int levelOfEquipment){
-        //Kontekst biznesowy: klient wchodzi na stronę salonu samochodów używanych i chce zobaczyć auta do pewnej kwoty "maxValue"
-        // oraz mające konkretny poziom wyposażenia np: poziom 2 = auto ma klimatyzację, a poziom 1 auto klimatyzacji nie ma itp
-        //ZADANIE: wyfiltruj a następnie wypisz auta od najtańszego do najdroższego z listy aut
-        //todo tutaj wykonaj zadanie
+        List<Car> carListFilter = new LinkedList<>();
+        for (Car car : carList) {
+            if(car.getValue() <= maxValue && Objects.equals(car.getLevelOfEquipment(), levelOfEquipment)){
+                carListFilter.add(car);
+            }
+        }
+        Collections.reverse(carListFilter);
+        for (Car car : carListFilter) {
+            System.out.println(car);
+        }
     }
 
     public static void addCarsToList() {
@@ -62,6 +65,7 @@ public class Task2 {
         removeCarFromList();
         for (Car car : carList) {
             System.out.println(car);
+        }
     }
 
 }
