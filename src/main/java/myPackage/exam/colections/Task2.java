@@ -47,7 +47,9 @@ public class Task2 {
     }
 
     public static void addCarsToList() {
-        //todo
+        carList.add(auto12);
+        carList.add(auto13);
+        carList.add(auto14);
     }
 
     public static void removeCarFromList() {
