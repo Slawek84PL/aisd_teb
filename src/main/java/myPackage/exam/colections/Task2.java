@@ -58,9 +58,10 @@ public class Task2 {
     }
 
     public static void printCarListAfterSomeModification(){
-        //dodaj 2-3 nowe auta do listy
-        //usuń z listy 1-2 auta
-        // wyświetl listę
+        addCarsToList();
+        removeCarFromList();
+        for (Car car : carList) {
+            System.out.println(car);
     }
 
 }
