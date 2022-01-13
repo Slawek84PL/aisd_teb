@@ -3,6 +3,7 @@ package myPackage.exam.colections;
 import java.util.*;
 
 public class Task2 {
+
     static Car auto1 = new Car(true, 2021, 2, 180000);
     static Car auto2 = new Car(false, 2021, 3, 200000);
     static Car auto3 = new Car(false, 2021, 1, 160000);
@@ -19,12 +20,9 @@ public class Task2 {
     static Car auto14 = new Car(false, 2019, 1, 80000);
 
     private static List<Car> carList = new LinkedList<>(Arrays.asList(auto1, auto2, auto3, auto4, auto5, auto6, auto7, auto8, auto9, auto10, auto11));
-    //todo ma być posortowana po roczniku, auta nowesze jako pierwsze a starsze później, i stale utzymywać porządek
 
     public static List<Car> getCarList(){ //TIP singleton
-        //zwraca aktualny stan listy aut
-        //todo
-        return null;
+        return carList;
     }
 
     public static void printSortedCars() {
